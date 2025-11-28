@@ -7,6 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
+
   test:
     name: Continuous Integration
     runs-on: ubuntu-latest
@@ -42,8 +43,8 @@ jobs:
           echo "<body>" >> index.html
           echo "<h1>Bienvenue sur le TP CI/CD</h1>" >> index.html
           echo "<p>Déploiement automatique reussi !</p>" >> index.html
-          echo "<p><strong>Date et heure :</strong> $(date +'%d/%m/%Y %H:%M:%S')</p>" >> index.html
-          echo "<p>Ce site à été généré par GitHub Actions.</p>" >> index.html
+          echo "<p><strong>Date et heure :</strong> $(date +\"%d/%m/%Y %H:%M:%S\")</p>" >> index.html
+          echo "<p>Ce site a été généré par GitHub Actions.</p>" >> index.html
           echo "</body></html>" >> index.html
 
       - name: Deploy to GitHub Pages
